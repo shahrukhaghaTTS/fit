@@ -1,0 +1,26 @@
+<div class="container">
+
+<h1>Take Charge of Your Health</h1>
+
+<div class="row">
+	<% @categories.each do |cat| %>
+	<div class="col-sm-6 col-lg-6">
+    <div class="panel panel-default">
+			<div class="panel-heading panel-height">
+				 <h2><center><%= link_to cat.name, categorical_path(cat_id: cat.id) %></center></h2>
+				 <center><%= image_tag cat.image.url(:thumb) %></center>
+			</div>
+		</div>
+	</div>
+	<% end %>
+</div>
+
+<br>
+
+
+<div>
+<%= link_to 'New Category', new_category_path, class: "btn btn-primary" %>
+</div>
+
+
+</div>

@@ -1,0 +1,25 @@
+<div class="container">
+
+<h1>Take Charge of Your Health</h1>
+
+<div class="row">
+	<% @categories.each do |category| %>
+	<div class="col-sm-12 col-med-6 col-lg-6">
+    <div class="panel panel-default">
+			<div class="panel-heading">
+				<h3><%= link_to category.name, category %></h3>
+			</div>
+		</div>
+	</div>
+	<% end %>
+</div>
+
+<br>
+
+
+<div>
+<%= link_to 'New Category', new_category_path, class: "btn btn-primary" %>
+</div>
+
+
+</div>

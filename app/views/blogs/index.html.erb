@@ -1,0 +1,30 @@
+<div class="container">
+
+<h1>Take Charge of Your Health</h1>
+
+<div class="row">
+	<% @blogs.each do |blog| %>
+	<div class="col-sm-12 col-lg-6">
+    <div class="panel panel-default">
+			<div class="panel-heading">
+				<h3><%= link_to blog.title, blog %></h3>
+			</div>
+			<div class="panel-body">
+				by <%= blog.author %><br>
+				<h6><i>Posted: <%= blog.created_at.strftime('%-m/%d/%Y at %I:%M%p') %></i></h6>
+        <p><b><%= blog.category.name %></b></p>
+			</div>
+		</div>
+	</div>
+	<% end %>
+</div>
+
+<br>
+
+
+<div>
+<%= link_to 'New Blog Post', new_blog_path, class: "btn btn-primary" %>
+</div>
+
+
+</div>
